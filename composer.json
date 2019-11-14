@@ -1,0 +1,43 @@
+{
+    "name": "kheme/laravel-supertext-nigeria",
+    "description": "A Laravel package for SuperText Nigeria's API",
+    "type": "stand-alone",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Okiemute Omuta",
+            "email": "okiemute.omuta@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Kheme\\SuperTextNg\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.1.3",
+        "fideloper/proxy": "^4.0",
+        "laravel/framework": "6.*",
+        "laravel/tinker": "^1.0",
+    },
+    "repositories": {
+        "package-name": {
+            "type": "path",
+            "url": "packages/kheme/laravel-supertext-nigeria",
+            "options": {
+                "symlink": true
+            }
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kheme\\SuperTextNg\\SuperTextNgServiceProvider"
+            ],
+            "aliases": {
+                "SuperTextNg": "Kheme\\SuperTextNg\\Facade\\SuperTextNg"
+            }
+        }
+    }
+}
