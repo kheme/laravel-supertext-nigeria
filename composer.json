@@ -19,7 +19,7 @@
         "php": "^7.1.3",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "6.*",
-        "laravel/tinker": "^1.0",
+        "laravel/tinker": "^1.0"
     },
     "repositories": {
         "package-name": {
@@ -34,10 +34,7 @@
         "laravel": {
             "providers": [
                 "Kheme\\SuperTextNg\\SuperTextNgServiceProvider"
-            ],
-            "aliases": {
-                "SuperTextNg": "Kheme\\SuperTextNg\\Facade\\SuperTextNg"
-            }
+            ]
         }
     }
 }
