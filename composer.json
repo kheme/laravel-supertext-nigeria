@@ -29,9 +29,6 @@
     },
     "extra": {
         "laravel": {
-            "providers": [
-                "Kheme\\SuperTextNg\\SuperTextNgServiceProvider"
-            ],
             "aliases": {
                 "SuperTextNg": "Kheme\\SuperTextNg\\Facade\\SuperTextNg"
             }
