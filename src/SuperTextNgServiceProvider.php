@@ -14,13 +14,7 @@ class SuperTextNgServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->publishes([
-            __DIR__.'/config/supertextng.php' =>  config_path('supertextng.php'),
-         ], 'config');
-
-        $this->app->bind('supertextng', function () {
-            return new SMS();
-        });
+        //
     }
 
     /**
@@ -30,6 +24,12 @@ class SuperTextNgServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([
+            __DIR__.'/config/supertextng.php' =>  config_path('supertextng.php'),
+         ], 'config');
+
+        $this->app->bind('supertextng', function () {
+            return new SMS();
+        });
     }
 }

@@ -75,7 +75,7 @@ and it should work for you.
 Run `artisan vendor:publish` to copy the distribution configuration file to your app's config directory.
 
 ```bash
-php artisan vendor:publish
+php artisan vendor:publish --provider="Kheme\SuperTextNG\SuperTextNgServiceProvider"
 ```
 
 #### Configuration on Lumen
