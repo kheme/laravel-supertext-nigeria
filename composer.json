@@ -20,7 +20,7 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^4.0",
         "laravel/tinker": "^1.0",
-        "Illuminate/Support": "^4.0"
+        "illuminate/support": "^4.0"
     },
     "repositories": {
         "package-name": {
