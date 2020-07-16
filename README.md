@@ -21,16 +21,6 @@ Using Composer:
 composer require kheme/laravel-supertext-nigeria
 ```
 
-Alternatively, add these two lines to your composer require section then run `composer update`:
-
-```json
-{
-    "require": {
-        "kheme/laravel-supertext-nigeria": "^1.0"
-    }
-}
-```
-
 #### Installing on Laravel 5.5 or above
 
 If you are using Laravel 5.5 or above, the package will automatically register the `supertext` provider and facade.
