@@ -17,7 +17,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.0",
-        "laravel/framework": ">=4.0"
+        "laravel/framework": "^4.0|^5.0|^6.0|^7.0|^8.0"
     },
     "repositories": {
         "package-name": {
