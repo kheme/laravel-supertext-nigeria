@@ -14,7 +14,7 @@
             "Kheme\\SuperTextNg\\": "src/"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": ">=5.3.0",
         "fideloper/proxy": "^4.0",
