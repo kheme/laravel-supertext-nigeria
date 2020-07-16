@@ -1,6 +1,6 @@
 {
     "name": "kheme/laravel-supertext-nigeria",
-    "description": "A Laravel package for SuperText Nigeria's API",
+    "description": "A Laravel package for SuperText Nigeria's SMS API",
     "type": "package",
     "license": "MIT",
     "authors": [
@@ -16,7 +16,7 @@
     },
     "minimum-stability": "dev",
     "require": {
-        "php": "^5.3.0",
+        "php": ">=5.3.0",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^4.0",
         "laravel/tinker": "^1.0",
