@@ -16,8 +16,10 @@
     },
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.0",
-        "laravel/framework": "^4.*"
+        "php": "^7.0.0",
+        "fideloper/proxy": "^4.0",
+        "laravel/framework": "^4.*",
+        "laravel/tinker": "^1.0"
     },
     "repositories": {
         "package-name": {
@@ -32,10 +34,7 @@
         "laravel": {
             "providers": [
                 "Kheme\\SuperTextNg\\SuperTextNgServiceProvider"
-            ],
-            "aliases": {
-                "SuperTextNg": "Kheme\\SuperTextNg\\Facade\\SuperTextNg"
-            }
+            ]
         }
     }
 }
