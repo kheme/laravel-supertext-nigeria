@@ -3,7 +3,7 @@
 namespace Kheme\SuperTextNg\Facades;
 use Illuminate\Support\Facades\Facade;
 
-class SuperTextNgFacade extends Facade
+class SMSFacade extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -14,6 +14,6 @@ class SuperTextNgFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'supertextng';
+        return 'SMS';
     }
 }
