@@ -4,17 +4,18 @@ namespace Kheme\SuperTextNg\Services;
 
 class SMS
 {
-    protected $api;
-    protected $recipients = [];
-    protected $balance_url;
+    protected $api_url     = 'https://www.supertextng.com/api.php?';
+    protected $balance_url = 'https://www.supertextng.com/getbalance.php?';
     protected $message;
     protected $username;
     protected $password;
     protected $sender;
-    protected $dnd;
+    protected $ignore_dnd;
+    protected $recipients        = [];
     protected $can_send          = false;
     protected $return_balance    = false;
     protected $return_units_used = false;
+
     public $errors;
 
     /**
@@ -26,9 +27,6 @@ class SMS
      */
     public function __construct()
     {
-        $this->api_url     = 'https://www.supertextng.com/api.php?';
-        $this->balance_url = 'https://www.supertextng.com/getbalance.php?';
-
         $this->username   = config('supertextng.access.username');
         $this->password   = config('supertextng.access.password');
         $this->sender     = config('supertextng.settings.sender');
@@ -105,15 +103,15 @@ class SMS
     /**
      * Set sending to DND numbers
      * 
-     * @param bool $set Send fo DND numbers (true) or not (false)? Defaults to true
+     * @param bool $ignore Send fo DND numbers (true) or not (false)? Defaults to true
      * 
      * @author Okiemute Omuta <iamkheme@gmail.com>
      * 
      * @return object
      */
-    public function ignoreDND(bool $set = true) : object
+    public function ignoreDND(bool $ignore = true) : object
     {
-        if ($set) {
+        if ($ignore) {
             $this->ignore_dnd = 'yes';
         }
 
@@ -176,10 +174,9 @@ class SMS
 
         $this->recipients = array_unique(array_filter($this->recipients));
 
-        $url_list        = [];
-        $recipient_count = count($this->recipients);
-        $send_count      = 0;
-        $units_used      = 0.0;
+        $url_list   = [];
+        $send_count = 0;
+        $units_used = 0.0;
 
         foreach ($this->recipients as $number) {
             $query['destination'] = $number;
@@ -203,7 +200,7 @@ class SMS
             // there was an error
         }
 
-        $message = $send_count . ' of ' . $recipient_count . ' SMS sent';
+        $message = $send_count . ' of ' . count($this->recipients) . ' SMS sent';
 
         $return = [
             'success' => true,
@@ -215,11 +212,10 @@ class SMS
         }
 
         if ($this->return_balance) {
-            $return['data']['balance'] = $this->balance(false) ?? 'Could not get balance';
+            $return['data']['balance'] = $this->balance(false) ?? 'Cannot get balance!';
         }
 
         exit($this->jsonResponse($return));
-        
     }
 
     /**
@@ -247,21 +243,16 @@ class SMS
 
         $this->handleResponseError($response);
 
-        $message = explode(':', $response);
-        $balance = round($message[1], 1);
-
         $return = [
             'success' => true,
-            'data' => [
-                'balance' => $balance
-            ],
+            'data' => [ 'balance' => (float) round(explode(':', $response)[1], 1) ],
         ];
 
         if ($can_exit) {
             exit($this->jsonResponse($return));
         }
 
-        return $balance;
+        return $return['data']['balance'];
     }
 
     /**
@@ -318,7 +309,7 @@ class SMS
      *
      * @return array
      */
-    protected function multiCurl(array $urls)
+    protected function multiCurl(array $urls) : array
     {
         $results  = [];
         $curl_arr = [];
@@ -359,12 +350,10 @@ class SMS
     protected function handleResponseError($response)
     {
         if (strlen($response) == 3) {
-            $return = [
+            exit($this->jsonResponse([
                 'success' => false,
                 'message' => $this->errors[$response]
-            ];
-
-            exit($this->jsonResponse($return, 400));
+            ], 400));
         }
     }
 }
