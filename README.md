@@ -40,7 +40,7 @@ For Laravel 5.4 or below, add `Kheme\SuperTextNg\SuperTextNgServiceProvider` to 
 If you want to use the facade interface, you can `use` the facade class when needed:
 
 ```php
-use Kheme\SuperTextNg\Facade\SuperTextNgFacade;
+use Kheme\SuperTextNg\Facade\SMSFacade;
 ```
 
 Or add to the list of aliases in your `config/app.php` as follows:
@@ -48,7 +48,7 @@ Or add to the list of aliases in your `config/app.php` as follows:
 ```php
 'aliases' => [
     ...
-    'SuperTextNg' => Kheme\SuperTextNg\Facade\SuperTextNgFacade::class,
+    'SuperTextNg' => Kheme\SuperTextNg\Facade\SMSFacade::class,
 ],
 ```
 
