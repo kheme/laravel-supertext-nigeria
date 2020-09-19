@@ -16,7 +16,7 @@ class SuperTextNgServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-                __DIR__.'/config/supertextng.php' =>  config_path('supertextng.php'),
+                __DIR__.'/config/supertextng.php' => $this->app->basePath() . '/config/supertextng.php',
             ],
             'config'
         );
