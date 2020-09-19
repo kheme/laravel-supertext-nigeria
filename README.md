@@ -3,10 +3,18 @@
 </h2>
 
 <p align="center">
-    <a href="https://packagist.org/packages/kheme/laravel-supertext-nigeria"><img src="https://poser.pugx.org/kheme/laravel-supertext-nigeria/v/stable?format=flat-square" alt="Latest Stable Version"></a>
-    <a href="https://packagist.org/packages/kheme/laravel-supertext-nigeria"><img src="https://poser.pugx.org/kheme/laravel-supertext-nigeria/v/unstable?format=flat-square" alt="Latest Unstable Version"></a>    
-    <a href="https://packagist.org/packages/kheme/laravel-supertext-nigeria"><img src="https://poser.pugx.org/kheme/laravel-supertext-nigeria/license?format=flat-square" alt="License"></a>
-    <a href="https://packagist.org/packages/kheme/laravel-supertext-nigeria"><img src="https://poser.pugx.org/kheme/laravel-supertext-nigeria/downloads" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/kheme/laravel-supertext-nigeria">
+        <img src="https://poser.pugx.org/kheme/laravel-supertext-nigeria/v/stable" alt="Latest Stable Version">
+    </a>
+    <a href="https://packagist.org/packages/kheme/laravel-supertext-nigeria">
+        <img src="https://poser.pugx.org/kheme/laravel-supertext-nigeria/v/unstable" alt="Latest Unstable Version">
+    </a>
+    <a href="https://packagist.org/packages/kheme/laravel-supertext-nigeria">
+        <img src="https://poser.pugx.org/kheme/laravel-supertext-nigeria/downloads" alt="Total Downloads">
+    </a>
+    <a href="https://packagist.org/packages/kheme/laravel-supertext-nigeria">
+        <img src="https://poser.pugx.org/kheme/laravel-supertext-nigeria/license" alt="License">
+    </a>
 </p>
 
 ## Introduction
