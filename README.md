@@ -93,10 +93,10 @@ Finally, update `config/supertextng.php` with your SuperText Nigeria credentials
 Alternatively, you can update your `.env` file with the respective values to the following:
 
 ```dotenv
-SUPERTEXTNIGERIA_USERNAME=(your supertextng.com username)
-SUPERTEXTNIGERIA_PASSWORD=(your supertextng.com password)
-SUPERTEXTNIGERIA_SENDER=(you SMS sender ID)
-SUPERTEXTNIGERIA_DND=('yes' or 'no' indicating whether to send to do-not-disturb numbers)
+SUPERTEXTNG_USERNAME=(your supertextng.com username)
+SUPERTEXTNG_PASSWORD=(your supertextng.com password)
+SUPERTEXTNG_SENDER=(you SMS sender ID)
+SUPERTEXTNG_IGNORE_DND=('yes' or 'no' indicating whether to send to do-not-disturb numbers)
 ```
 
 ### Usage
