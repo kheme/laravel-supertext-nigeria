@@ -1,6 +1,7 @@
 {
     "name"       : "kheme/laravel-supertext-nigeria",
     "description": "A Laravel package for SuperText Nigeria's SMS API",
+    "version"    : "1.0.0",
     "keywords"   : [
         "kheme",
         "laravel",
