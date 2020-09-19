@@ -34,7 +34,7 @@
                 "Kheme\\SuperTextNg\\SuperTextNgServiceProvider"
             ],
             "aliases": {
-                "SuperTextNg": "Kheme\\SuperTextNg\\Facades\\SuperTextNgFacade"
+                "SMS": "Kheme\\SuperTextNg\\Facades\\SMS"
             }
         }
     }

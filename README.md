@@ -40,7 +40,7 @@ For Laravel 5.4 or below, add `Kheme\SuperTextNg\SuperTextNgServiceProvider` to 
 If you want to use the facade interface, you can `use` the facade class when needed:
 
 ```php
-use Kheme\SuperTextNg\Facade\SuperTextNgFacade;
+use Kheme\SuperTextNg\Facade\SMSFacade;
 ```
 
 Or add to the list of aliases in your `config/app.php` as follows:
@@ -48,7 +48,7 @@ Or add to the list of aliases in your `config/app.php` as follows:
 ```php
 'aliases' => [
     ...
-    'SuperTextNg' => Kheme\SuperTextNg\Facade\SuperTextNgFacade::class,
+    'SuperTextNg' => Kheme\SuperTextNg\Facade\SMSFacade::class,
 ],
 ```
 
@@ -67,7 +67,7 @@ Next, we have to tell Lumen that our library exists. Update `bootstrap/app.php` 
 $app->register(Kheme\SuperTextNg\SuperTextNgServiceProvider::class);
 ```
 
-At this point, set `SUPERTEXTNIGERIA_USERNAME`, `SUPERTEXTNIGERIA_PASSWORD`, `SUPERTEXTNIGERIA_SENDER` and `SUPERTEXTNIGERIA_DND` in your `.env` file
+At this point, set `SUPERTEXTNG_USERNAME`, `SUPERTEXTNG_PASSWORD`, `SUPERTEXTNG_SENDER` and `SUPERTEXTNG_IGNORE_DND` in your `.env` file
 and it should work for you.
 
 ### Configuration
