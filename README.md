@@ -1,5 +1,5 @@
 <h2 align="center">
-    SuperText Nigeria Package for Laravel
+    Laravel Package for SuperText Nigeria SMS Gateway
 </h2>
 
 <p align="center">
@@ -11,7 +11,7 @@
 
 ## Introduction
 
-This is a simple PHP wrapper for SuperText Nigeria's SMS API gateway.
+This is a simple Laravel wrapper for SuperText Nigeria's SMS API gateway.
 
 ## Installation
 
