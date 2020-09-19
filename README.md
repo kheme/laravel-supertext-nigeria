@@ -89,7 +89,7 @@ mkdir config
 cp vendor/kheme/laravel-supertext-nigeria/config/supertextng.php config/supertextng.php
 ```
 
-Finally, update `config/supertextng.php` with your SuperText Nigeria credentials and settings.
+Update `config/supertextng.php` with your SuperText Nigeria credentials and settings.
 Alternatively, you can update your `.env` file with the respective values to the following:
 
 ```dotenv
@@ -99,13 +99,21 @@ SUPERTEXTNG_SENDER=(you SMS sender ID)
 SUPERTEXTNG_IGNORE_DND=('yes' or 'no' indicating whether to send to do-not-disturb numbers)
 ```
 
+Finally, add `$app->configure('supertextng');` to your `bootstrap/app.php` somewhere before registering the service provider above.
+
 ### Usage
+
+Don't forget to import the fascade before use:
+
+```php
+use Kheme\SuperTextNg\Facades\SMS;
+```
 
 Sending to a single recipient
 -----------------------------
 
 ```php
-SuperTextNg::from('Kheme')
+SMS::from('Kheme')
     ->to('2348153332428')
     ->message('Using the facade to send a message.')
     ->send();
@@ -119,7 +127,7 @@ Sending to multiple recipients
 You can send an SMS to multiple recipients by including multiple `to()` in your call:
 
 ```php
-SuperTextNg::from('Kheme')
+SMS::from('Kheme')
     ->to('2348153332428')
     ->to('2348056511193')
     ->message('Using the facade to send a message.')
@@ -130,7 +138,7 @@ SuperTextNg::from('Kheme')
 Or, by supplying an array of phone numbers to a single `to()`:
 
 ```php
-SuperTextNg::from('Kheme')
+SMS::from('Kheme')
     ->to(
         [
             '2348153332428',
@@ -147,7 +155,7 @@ Send to DND enabled numbers
 To send SMS to numbers that have Do Not Disturb (DND) enabled, include `ignoreDND()` to your call:
 
 ```php
-SuperTextNg::from('Kheme')
+SMS::from('Kheme')
     ->to('2348153332428')
     ->message('Using the facade to send a message.')
     ->ignoreDND()
@@ -161,7 +169,7 @@ Return unit balance after sending
 If you would like to return your account balance after sending, include `returnBalance()` to your call:
 
 ```php
-SuperTextNg::from('Kheme')
+SMS::from('Kheme')
     ->to('2348153332428')
     ->message('Using the facade to send a message.')
     ->returnBalance()
@@ -175,7 +183,7 @@ Return amount of units used for sending
 If you would like to return the total amount of units used after sending, include `returnUnitsUsed()` to your call:
 
 ```php
-SuperTextNg::from('Kheme')
+SMS::from('Kheme')
     ->to('2348153332428')
     ->message('Using the facade to send a message.')
     ->returnUnitsUsed()
@@ -189,7 +197,7 @@ Combining options
 The above method options, exluding the `balance()` below, can be combined like in the following example:
 
 ```php
-SuperTextNg::from('Kheme')
+SMS::from('Kheme')
     ->to('2348153332428')
     ->message('Using the facade to send a message.')
     ->returnBalance()
@@ -205,7 +213,7 @@ Checking account balance
 To check your SuperText Nigeria credit balance, simply call `balance()`:
 
 ```php
-SuperTextNg::balance();
+SMS::balance();
 ```
 
 ### Errors
