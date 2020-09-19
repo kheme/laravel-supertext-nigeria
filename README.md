@@ -67,7 +67,7 @@ Next, we have to tell Lumen that our library exists. Update `bootstrap/app.php` 
 $app->register(Kheme\SuperTextNg\SuperTextNgServiceProvider::class);
 ```
 
-At this point, set `SUPERTEXTNIGERIA_USERNAME`, `SUPERTEXTNIGERIA_PASSWORD`, `SUPERTEXTNIGERIA_SENDER` and `SUPERTEXTNIGERIA_DND` in your `.env` file
+At this point, set `SUPERTEXTNG_USERNAME`, `SUPERTEXTNG_PASSWORD`, `SUPERTEXTNG_SENDER` and `SUPERTEXTNG_IGNORE_DND` in your `.env` file
 and it should work for you.
 
 ### Configuration
