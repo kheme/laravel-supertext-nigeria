@@ -1,12 +1,25 @@
 {
-    "name": "kheme/laravel-supertext-nigeria",
+    "name"       : "kheme/laravel-supertext-nigeria",
     "description": "A Laravel package for SuperText Nigeria's SMS API",
-    "type": "package",
-    "license": "MIT",
-    "authors": [
+    "keywords"   : [
+        "kheme",
+        "laravel",
+        "sms",
+        "laravel sms",
+        "supertextng",
+        "sms gateway",
+        "laravel sms gateway",
+        "laravel sms sender"
+    ],
+    "homepage": "https://github.com/kheme/laravel-supertext-nigeria",
+    "type"    : "package",
+    "license" : "MIT",
+    "authors" : [
         {
-            "name": "Okiemute Omuta",
-            "email": "iamkheme@gmail.com"
+            "name"    : "Okiemute Omuta",
+            "email"   : "iamkheme@gmail.com",
+            "homepage": "https://github.com/kheme",
+            "role"    : "Developer"
         }
     ],
     "autoload": {
@@ -15,14 +28,14 @@
         }
     },
     "minimum-stability": "dev",
-    "require": {
-        "php": ">=5.3.0",
-        "laravel/framework": "^4.0|^5.0|^6.0|^7.0|^8.0"
+    "prefer-stable"    : true,
+    "require"          : {
+        "php": ">=5.3.0"
     },
     "repositories": {
         "package-name": {
-            "type": "path",
-            "url": "packages/kheme/laravel-supertext-nigeria",
+            "type"   : "path",
+            "url"    : "packages/kheme/laravel-supertext-nigeria",
             "options": {
                 "symlink": true
             }
