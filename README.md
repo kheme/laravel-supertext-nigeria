@@ -40,7 +40,6 @@ For Laravel 5.4 or below, add `Kheme\SuperTextNg\SuperTextNgServiceProvider` to 
 ```php
 'providers' => [
     // Other service providers...
-
     Kheme\SuperTextNg\SuperTextNgServiceProvider::class,
 ],
 ```
@@ -140,7 +139,6 @@ SMS::from('Kheme')
     ->to('2348056511193')
     ->message('Using the facade to send a message.')
     ->send();
-]);
 ```
 
 Or, by supplying an array of phone numbers to a single `to()`:
@@ -168,7 +166,6 @@ SMS::from('Kheme')
     ->message('Using the facade to send a message.')
     ->ignoreDND()
     ->send();
-]);
 ```
 
 Return unit balance after sending
@@ -182,7 +179,6 @@ SMS::from('Kheme')
     ->message('Using the facade to send a message.')
     ->returnBalance()
     ->send();
-]);
 ```
 
 Return amount of units used for sending
@@ -196,7 +192,6 @@ SMS::from('Kheme')
     ->message('Using the facade to send a message.')
     ->returnUnitsUsed()
     ->send();
-]);
 ```
 
 Combining options
@@ -212,7 +207,6 @@ SMS::from('Kheme')
     ->returnUnitsUsed()
     ->ignoreDND()
     ->send();
-]);
 ```
 
 Checking account balance
@@ -221,7 +215,7 @@ Checking account balance
 To check your SuperText Nigeria credit balance, simply call `balance()`:
 
 ```php
-SMS::balance();
+return SMS::balance();
 ```
 
 ### Errors
