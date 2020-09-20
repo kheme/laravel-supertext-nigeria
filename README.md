@@ -1,5 +1,5 @@
 <h2 align="center">
-    Laravel Package for [SuperText Nigeria](https://www.supertextng.com) SMS Gateway
+    Laravel Package for SuperText Nigeria SMS Gateway
 </h2>
 
 <p align="center">
