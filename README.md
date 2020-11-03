@@ -17,10 +17,12 @@
     </a>
 </p>
 
+# Depreciation
+This project is currently depreciated and archived because a framework agnostic PHP version is now available here: [PHP Wrapper for SuperText Nigeria SMS Gateway](https://github.com/kheme/php-supertext-nigeria)
+
 ## Introduction
 
 This is a simple Laravel wrapper for [SuperText Nigeria](https://www.supertextng.com)'s SMS API gateway.
-If you are not using Laravel or Lumen, a framework agnostic PHP wrapper is available here: [PHP Wrapper for SuperText Nigeria SMS Gateway](https://github.com/kheme/php-supertext-nigeria)
 
 ## Installation
 
