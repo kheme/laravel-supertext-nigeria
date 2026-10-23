@@ -2,6 +2,8 @@
 
 namespace Kheme\SuperTextNg\Services;
 
+use Kheme\SuperTextNg\Exceptions\SuperTextException;
+
 class SMS
 {
     protected $api_url     = 'https://www.supertextng.com/api.php?';
@@ -155,7 +157,7 @@ class SMS
      * 
      * @author Okiemute Omuta <iamkheme@gmail.com>
      * 
-     * return json
+     * @return array
      */
     public function send()
     {
@@ -212,25 +214,22 @@ class SMS
         }
 
         if ($this->return_balance) {
-            $return['data']['balance'] = $this->balance(false) ?? 'Cannot get balance!';
+            $return['data']['balance'] = $this->balance();
         }
 
-        exit($this->jsonResponse($return));
+        return $return;
     }
 
     /**
      * Method to get the user's balance
-     * 
-     * @param boolean $can_exit (Optional) Should we exit after execution?
-     *                          If we call this method from within this class,
-     *                          we don't need to exit after execution.
-     *                          Otherwise if called from outside, we should exit.
-     * 
+     *
      * @author Okiemute Omuta <iamkheme@gmail.com>
-     * 
-     * @return array|int
+     *
+     * @throws SuperTextException If the API returns an error code
+     *
+     * @return float
      */
-    public function balance($can_exit = true)
+    public function balance()
     {
         $url = $this->balance_url . http_build_query(
             [
@@ -243,35 +242,7 @@ class SMS
 
         $this->handleResponseError($response);
 
-        $return = [
-            'success' => true,
-            'data' => [ 'balance' => (float) round(explode(':', $response)[1], 1) ],
-        ];
-
-        if ($can_exit) {
-            exit($this->jsonResponse($return));
-        }
-
-        return $return['data']['balance'];
-    }
-
-    /**
-     * Return json response to the browser
-     *
-     * @param array $data             Array containing data to reutnr as json
-     * @param int   $http_status_code Optional error code to include in header
-     *
-     * @author Okiemute Omuta <iamkheme@gmail.com>
-     *
-     * @return json
-     */
-    protected function jsonResponse($data, $http_status_code = 200)
-    {
-        header_remove();
-        header('Content-Type: application/json;charset=utf-8');
-        http_response_code($http_status_code);
-
-        return json_encode($data);
+        return (float) round(explode(':', $response)[1], 1);
     }
 
     /**
@@ -345,15 +316,17 @@ class SMS
      *
      * @author Okiemute Omuta <iamkheme@gmail.com>
      *
-     * @return json
+     * @throws SuperTextException
+     *
+     * @return void
      */
     protected function handleResponseError($response)
     {
         if (strlen($response) == 3) {
-            exit($this->jsonResponse([
-                'success' => false,
-                'message' => $this->errors[$response]
-            ], 400));
+            throw new SuperTextException(
+                $this->errors[$response] ?? 'Unknown error: ' . $response,
+                (int) $response
+            );
         }
     }
 }
